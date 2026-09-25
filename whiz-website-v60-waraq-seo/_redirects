@@ -1,0 +1,20 @@
+# Apex → www (also enforce at Cloudflare zone level with a Redirect Rule)
+https://whizsolutions.net/* https://www.whizsolutions.net/:splat 301
+
+# Renamed sections
+/projects/ /case-studies/ 301
+/projects /case-studies 301
+
+# Legacy URLs still indexed by search engines (old website)
+/contact-us-1 /contact/ 301
+/contact-us-1/ /contact/ 301
+/contact-us /contact/ 301
+/contact-us/ /contact/ 301
+/about-us /about/ 301
+/about-us/ /about/ 301
+/home / 301
+/home/ / 301
+/services /solutions/ 301
+/services/ /solutions/ 301
+/waraq/* /waraqpdf/:splat 301
+/waraq /waraqpdf/ 301

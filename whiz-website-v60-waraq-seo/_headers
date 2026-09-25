@@ -1,0 +1,40 @@
+# ============================================================================
+#  Cloudflare Pages — HTTP response headers  (public/_headers)
+# ============================================================================
+#  Cloudflare Pages reads this file and applies these headers to matching
+#  paths. It is copied verbatim into the exported /out folder at build time.
+#
+#  The Content-Security-Policy (CSP) below is an ALLOW-LIST: the browser will
+#  block any script/style/font/connection/frame/image not listed here. If you
+#  add a new third-party tool, you MUST add its domain to the relevant
+#  directive or it will silently fail. Domains currently allowed:
+#    - challenges.cloudflare.com ......... Turnstile (contact form)
+#    - static.cloudflareinsights.com ..... Cloudflare Web Analytics beacon
+#    - www.googletagmanager.com .......... GA4 / Google Tag Manager
+#    - www.clarity.ms / *.clarity.ms ..... Microsoft Clarity
+#    - snap.licdn.com / px.ads.linkedin .. LinkedIn Insight
+#    - api.fontshare.com ................. Nohemi font CSS (headings)
+#    - cdn.fontshare.com ................. Nohemi font files
+#    - whiz-assistant.josephpx.workers.dev  AI chat Worker (ChatWidget)
+#    - formspree.io ...................... Contact form submissions
+#    - *.google-analytics.com ............ GA4 data collection
+#  Same-origin ('self') covers self-hosted fonts, the Cloudflare email-decode
+#  script under /cdn-cgi/, and all first-party assets.
+#
+#  NOTE: If you deploy the optional contact-proxy Worker
+#  (worker/contact-proxy-worker.js) on a *.workers.dev URL, add that exact
+#  origin to `connect-src` below, or the form POST will be blocked.
+# ============================================================================
+
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://static.cloudflareinsights.com https://www.googletagmanager.com https://www.clarity.ms https://snap.licdn.com; style-src 'self' 'unsafe-inline' https://api.fontshare.com; font-src 'self' https://cdn.fontshare.com; img-src 'self' data: https:; connect-src 'self' https://whiz-assistant.josephpx.workers.dev https://formspree.io https://*.google-analytics.com https://*.clarity.ms https://px.ads.linkedin.com https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io; frame-ancestors 'none'; upgrade-insecure-requests
+
+# Waraq product page — site protections plus the Google font this page's design uses
+/waraqpdf/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://static.cloudflareinsights.com; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io; frame-ancestors 'none'; upgrade-insecure-requests

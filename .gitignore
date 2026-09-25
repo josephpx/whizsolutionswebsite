@@ -1,0 +1,16 @@
+.DS_Store
+**/.DS_Store
+releases/*.zip
+releases/whiz-website-v46-whizengage/
+releases/whiz-website-v48-roadmapcopy/
+releases/whiz-website-v49-whizfootprint/
+releases/whiz-website-v50-imagefix/
+whiz-website-v51-navfix/
+whiz-website-v52-footprint-paused/
+whiz-website-v53-waraq/
+whiz-website-v54-waraq-fontfix/
+whiz-website-v55-waraq-manus/
+whiz-website-v56-waraq-nav/
+whiz-website-v57-waraq-cachefix/
+whiz-website-v58-waraq-conversion/
+whiz-website-v59-waraqpdf/
