@@ -1,5 +1,5 @@
 # whizsolutions.net website — STATUS
-Last updated: 15 Sep 2026 (by Fable)
+Last updated: 25 Sep 2026 (by Fable)
 
 ## What it is
 The corporate website (Next.js App Router **static export** — no build step available here; we edit the exported files directly). Hosted on **Cloudflare Pages**, project "whizsolutions" (also whizsolutions.pages.dev), custom domain www.whizsolutions.net.
@@ -39,8 +39,8 @@ Three Workers override Pages on their paths: `whiz-engage` (/genpharm/als-survey
 4. Site-wide search for old paths after any URL change (v51 grep-verified zero stale links).
 
 ## Structure here
-- `whiz-website-v51-navfix/` — CURRENT source (deploy this)
-- `releases/` — v46–v50 folders + zips + WhizFootprint page zip (design handoff)
+- `whiz-website-v60-waraq-seo/` — CURRENT source (LIVE; deploy this)
+- `releases/` and superseded v46–v59 folders — rollback history (kept on Joseph's Mac; NOT in the GitHub repo — from v60 onward git history is the version record)
 - `not-implemented/` — ADD-TO-WEBSITE-FOLDER (superseded), whiz-products-page worker paste (obsolete approach: marketing page as worker — abandoned when Pages deploy method was discovered). Old downloaded website zips (incl. Google-Business versions never implemented) are still in Joseph's Downloads; add here if wanted.
 - `assets/` — hero image, email signature; `assets/case-studies/` — ~60 project/case-study source images (Etihad, Tanseeq, Legrand, Roca, payroll dashboards, etc.)
 
@@ -48,5 +48,10 @@ Three Workers override Pages on their paths: `whiz-engage` (/genpharm/als-survey
 - Site chatbot: `shared/whiz-assistant-worker-PASTE-THIS.js.txt` (worker on whiz-assistant.josephpx.workers.dev, allowed in CSP connect-src)
 - Product APPS are not in this project: see whiz-engage/, whizfootprint/, serviceops/ folders. Rule: **website project owns all marketing pages (including /whizengage, /whizfleet, /serviceops, /products/whizfootprint); product projects own only their applications.**
 
+## GitHub
+- Repo: https://github.com/josephpx/whizsolutionswebsite (first push 25 Sep 2026, commit "v60 + documentation", 303 files).
+- What's excluded (.gitignore): .DS_Store, releases/*.zip, superseded version folders v46–v59. No secrets/passcodes have ever been in this folder.
+- Routine after every new deployed version: in Terminal `cd "$HOME/Claude Fable/website"` → `git add .` → `git commit -m "v61: what changed"` → `git push` (username josephpx, password = fine-grained token scoped to this repo only, pasted only at Terminal's password prompt).
+
 ## Pending
-- Deploy v51 (drag whiz-website-v51-navfix) and live-verify.
+- Nothing. v60 live and verified; repo pushed and verified 25 Sep.
